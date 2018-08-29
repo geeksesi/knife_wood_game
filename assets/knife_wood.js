@@ -4,8 +4,7 @@
         //  Although it will work fine with this tutorial, it's almost certainly not the most current version.
         //  Be sure to replace it with an updated version before you start experimenting with adding your own code.
 
-        var game = new Phaser.Game(800, 790, Phaser.CANVAS, '', { preload: preload, create: create, update: update });
-
+        var game = new Phaser.Game("80%", "100%", Phaser.CANVAS, '', { preload: preload, create: create, update: update, resize:onResize });
         function preload () 
         {
 
@@ -25,8 +24,9 @@
             wood = game.add.sprite(game.world.centerX, (game.world.centerY + 50), 'my_wood');
             wood.anchor.setTo(0.5, 0.5);
 
-
-            // knife.anchor.setTo(0.5, 0.5);
+            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            this.scale.pageAlignHorizontally = true;
+            this.scale.pageAlignVertically = true;
         }
         function update() 
         {
@@ -46,6 +46,19 @@
             console.log("HEllo");
             knife.body.velocity.y=1000;
             console.log(knife.body.y);
+
+        }
+
+        function onResize() 
+        {
+            alert("hello"); 
+            //scaling options
+            game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            //have the game centered horizontally
+            game.scale.pageAlignHorizontally = true;
+            game.scale.pageAlignVertically = true;
+            //screen size will be set automatically
+            game.scale.setScreenSize(true);
 
         }
     };
