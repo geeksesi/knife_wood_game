@@ -8,4 +8,3 @@ can u play in [knife Wood Game](https://geeksesi.github.io/knife_wood_game)
 ### made just for fun :D 
 
 - javascript programmer : me ( mohammad javad ghasemy)
-- graphic and idea : homayon naseery @Afro_Beast
